@@ -1,0 +1,11 @@
+{
+  "name": "calorie-deficit",
+  "framework": "nextjs",
+  "language": "javascript",
+  "buildCommand": "next build",
+  "startCommand": "next start",
+  "domain": "caloriedeficitproject",
+  "email": "raffawhisandewa@gmail.com",
+  "secretKey": "imuii_8a97a25f3a7ee37801d2f1e2ebfd996f43320523d16cfad7890dc46043df9317",
+  "repoUrl": "https://github.com/Lab-Sisjarkom-IMUII/caloriedeficitproject-72174ee5.git"
+}

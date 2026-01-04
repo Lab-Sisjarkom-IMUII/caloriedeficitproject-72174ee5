@@ -1,0 +1,568 @@
+/* ============================================
+   DAFTAR SEKARANG - ULTRA SPECIFIC VERSION
+   Overrides ALL inline styles and conflicts
+   ============================================ */
+
+/* ===== RESET PARENT CONTAINERS ===== */
+#landingPage .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2rem !important;
+}
+
+#landingPage .card-auth {
+    max-width: 800px !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+    padding: 2.5rem !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+/* ===== REGISTRATION FORM CONTAINER ===== */
+form#registerForm.register-form-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* ===== HEADER ===== */
+#registerForm .header-section {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    overflow: visible !important;
+    position: relative !important;
+    padding: 1rem 0 !important;
+}
+
+#registerForm .header-section h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+#registerForm .header-section p {
+    font-size: 0.9375rem !important;
+    color: #64748b !important;
+}
+
+/* Heart icon - prevent clipping */
+#registerForm .header-section svg,
+#registerForm .header-section .icon-large,
+#registerForm .header-section .icon-medium {
+    overflow: visible !important;
+    margin: 0 auto 1rem !important;
+}
+
+/* ===== GOOGLE BUTTON ===== */
+#registerForm .google-signin-section {
+    margin-bottom: 1.5rem !important;
+}
+
+#registerForm .btn-google {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.875rem 1.5rem !important;
+    gap: 0.75rem !important;
+}
+
+/* ===== DIVIDER ===== */
+#registerForm .divider {
+    display: flex !important;
+    align-items: center !important;
+    margin: 1.5rem auto !important;
+    max-width: 500px !important;
+}
+
+#registerForm .divider::before,
+#registerForm .divider::after {
+    content: '' !important;
+    flex: 1 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+#registerForm .divider span {
+    padding: 0 1rem !important;
+    color: #94a3b8 !important;
+    font-size: 0.875rem !important;
+}
+
+/* ===== PROGRESS STEPS ===== */
+#registerForm #regProgressSteps.progress-steps,
+#registerForm .progress-steps {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.75rem !important;
+    padding: 1.5rem 1.25rem !important;
+    background: #f8fafc !important;
+    border-radius: 10px !important;
+    flex-wrap: nowrap !important;
+}
+
+#registerForm .progress-steps .step {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.4375rem !important;
+    min-width: 90px !important;
+    flex: 0 0 auto !important;
+}
+
+#registerForm .step-number {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: #e2e8f0 !important;
+    color: #64748b !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+#registerForm .step-label {
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+}
+
+#registerForm .step.active .step-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+#registerForm .step.active .step-label {
+    color: #667eea !important;
+    font-weight: 600 !important;
+}
+
+#registerForm .step.completed .step-number {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+/* ===== FORM CONTAINER (SCROLLABLE) - OVERRIDE INLINE STYLES ===== */
+#registerForm .form-container {
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
+    padding-right: 10px !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .form-container::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+#registerForm .form-container::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+    border-radius: 4px !important;
+}
+
+#registerForm .form-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
+    border-radius: 4px !important;
+}
+
+#registerForm .form-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8 !important;
+}
+
+/* ===== FORM SECTIONS ===== */
+#registerForm .form-section {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 1.5rem 2rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .form-section:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+#registerForm .section-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    color: #1e293b !important;
+}
+
+/* ===== FORM GROUPS ===== */
+#registerForm .form-group {
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .form-group label {
+    display: block !important;
+    margin-bottom: 0.375rem !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    color: #334155 !important;
+}
+
+#registerForm .form-group .required {
+    color: #ef4444 !important;
+}
+
+/* ===== ALL INPUTS - UNIVERSAL ===== */
+#registerForm input,
+#registerForm select,
+#registerForm textarea,
+#registerForm .form-group input,
+#registerForm .form-group select,
+#registerForm .form-group textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    font-size: 0.9375rem !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s ease !important;
+    font-family: inherit !important;
+}
+
+#registerForm input:focus,
+#registerForm select:focus,
+#registerForm textarea:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* ===== FORM ROWS (2 COLUMNS) ===== */
+#registerForm .form-row {
+    display: flex !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .form-row > * {
+    flex: 1 !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .form-row > .form-group {
+    margin-bottom: 0 !important;
+}
+
+/* ===== GENDER RADIO BUTTONS ===== */
+#registerForm .radio-group {
+    display: flex !important;
+    gap: 1rem !important;
+    width: 100% !important;
+}
+
+#registerForm .radio-option {
+    flex: 1 !important;
+}
+
+#registerForm .radio-option input[type="radio"] {
+    display: none !important;
+}
+
+#registerForm .radio-option label,
+#registerForm .radio-label {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0.875rem 1.25rem !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-size: 0.9375rem !important;
+    background: white !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#registerForm .radio-option label:hover,
+#registerForm .radio-label:hover {
+    border-color: #cbd5e1 !important;
+    background: #f8fafc !important;
+}
+
+#registerForm .radio-icon {
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+}
+
+/* Selected gender */
+#registerForm .radio-option input[type="radio"]:checked + label {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-color: #667eea !important;
+    color: #ffffff !important;
+}
+
+/* Keep emoji colored */
+#registerForm .radio-option input[type="radio"]:checked + label .radio-icon {
+    filter: none !important;
+}
+
+/* ===== INPUT WITH UNIT (kg, cm) ===== */
+#registerForm .input-with-unit {
+    position: relative !important;
+    width: 100% !important;
+}
+
+#registerForm .input-with-unit input {
+    padding-right: 3rem !important;
+}
+
+#registerForm .input-with-unit .unit {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    pointer-events: none !important;
+}
+
+/* ===== GOAL CARDS (3 COLUMNS) ===== */
+#registerForm .goal-options {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 0.875rem !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+}
+
+#registerForm .goal-card {
+    flex: 1 1 0 !important;
+    max-width: 190px !important;
+    min-width: 170px !important;
+    cursor: pointer !important;
+}
+
+#registerForm .goal-card input[type="radio"] {
+    display: none !important;
+}
+
+#registerForm .goal-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1rem 0.75rem !important;
+    min-height: 135px !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    background: white !important;
+    transition: all 0.3s ease !important;
+    gap: 0.25rem !important;
+}
+
+#registerForm .goal-content:hover {
+    border-color: #cbd5e1 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+#registerForm .goal-icon {
+    font-size: 2rem !important;
+    line-height: 1 !important;
+    margin-bottom: 0.25rem !important;
+}
+
+#registerForm .goal-title {
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+}
+
+#registerForm .goal-desc {
+    font-size: 0.6875rem !important;
+    color: #64748b !important;
+    line-height: 1.3 !important;
+}
+
+/* Selected goal card */
+#registerForm .goal-card input[type="radio"]:checked + .goal-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-color: #667eea !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2) !important;
+}
+
+#registerForm .goal-card input[type="radio"]:checked + .goal-content .goal-title,
+#registerForm .goal-card input[type="radio"]:checked + .goal-content .goal-desc {
+    color: #ffffff !important;
+}
+
+#registerForm .goal-card input[type="radio"]:checked + .goal-content .goal-icon {
+    filter: none !important;
+}
+
+/* ===== GOAL PREVIEW ===== */
+#registerForm .goal-preview {
+    background: #f0fdf4 !important;
+    border: 2px solid #86efac !important;
+    border-radius: 10px !important;
+    padding: 1.25rem !important;
+    margin-top: 1.25rem !important;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+#registerForm .btn-primary,
+#registerForm button[type="submit"],
+#registerForm .btn-large {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 1.5rem auto 0 !important;
+    padding: 0.875rem 2rem !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+}
+
+#registerForm .btn-primary:hover,
+#registerForm button[type="submit"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* ===== ERROR MESSAGE ===== */
+#registerForm #registerError,
+#registerForm .error-message {
+    background: #fef2f2 !important;
+    border: 2px solid #fecaca !important;
+    color: #dc2626 !important;
+    padding: 0.875rem 1.125rem !important;
+    border-radius: 8px !important;
+    margin-bottom: 1rem !important;
+    font-size: 0.875rem !important;
+    display: none !important;
+}
+
+#registerForm #registerError:not(:empty) {
+    display: block !important;
+}
+
+/* ===== SWITCH FORM LINK ===== */
+#registerForm .switch-form {
+    text-align: center !important;
+    margin-top: 1.25rem !important;
+    font-size: 0.9375rem !important;
+    color: #64748b !important;
+}
+
+#registerForm .switch-form a {
+    color: #667eea !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+#registerForm .switch-form a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    #landingPage .card-auth {
+        max-width: 750px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #landingPage .card-auth {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+        border-radius: 0 !important;
+    }
+    
+    #registerForm .form-section {
+        padding: 1.25rem 1.5rem !important;
+    }
+    
+    #registerForm .form-row {
+        flex-direction: column !important;
+        gap: 0.875rem !important;
+    }
+    
+    #registerForm .radio-group {
+        flex-direction: column !important;
+    }
+    
+    #registerForm .goal-options {
+        flex-direction: column !important;
+        max-width: 100% !important;
+    }
+    
+    #registerForm .goal-card {
+        max-width: 100% !important;
+    }
+    
+    #registerForm .progress-steps {
+        flex-wrap: wrap !important;
+        gap: 0.75rem !important;
+    }
+    
+    #registerForm .step {
+        min-width: calc(50% - 0.5rem) !important;
+    }
+}
+
+/* ===== CRITICAL FIXES ===== */
+#registerForm *,
+#registerForm *::before,
+#registerForm *::after {
+    box-sizing: border-box !important;
+}
+
+#registerForm {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+}
+
+#registerForm .form-section,
+#registerForm .form-group,
+#registerForm .form-row,
+#registerForm input,
+#registerForm select {
+    max-width: 100% !important;
+}

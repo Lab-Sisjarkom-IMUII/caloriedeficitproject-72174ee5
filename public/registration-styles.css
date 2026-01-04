@@ -1,0 +1,1304 @@
+/* ========================================
+   REGISTRATION STYLES - CLEAN REDESIGN
+   Modern Card-Based Form Sections
+   ======================================== */
+
+/* ============================================
+   SCROLLBAR - Simple Gray
+   ============================================ */
+.form-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ============================================
+   FORM SECTIONS - Card Style
+   ============================================ */
+.form-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-section:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Active section - when user is filling */
+.form-section:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+}
+
+/* Section number badge - DISABLED */
+/*
+.form-section::before {
+    content: attr(data-section);
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+*/
+
+/* No badge - clean look */
+.form-section::before {
+    display: none;
+}
+
+/* Completed section */
+.form-section.completed {
+    border-color: #10b981;
+}
+
+/* Completed checkmark - top right */
+.form-section.completed::after {
+    content: '✓';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #10b981;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Last section */
+.form-section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   SECTION TITLE
+   ============================================ */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.section-title .emoji,
+.section-title span:first-child {
+    font-size: 1.5rem;
+}
+
+.section-description {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    color: #1e293b;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Input with unit (cm, kg) */
+.input-with-unit {
+    position: relative;
+}
+
+.input-with-unit input {
+    padding-right: 3.5rem;
+}
+
+.input-with-unit .unit {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.875rem;
+    pointer-events: none;
+}
+
+/* Form Row - 2 columns */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   RADIO BUTTONS - Gender Selection
+   ============================================ */
+.radio-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.radio-option {
+    flex: 1;
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: #475569;
+}
+
+.radio-label:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.radio-icon {
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   GOAL CARDS
+   ============================================ */
+.goal-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.goal-card {
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.goal-card input[type="radio"] {
+    display: none;
+}
+
+.goal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-height: 140px;
+}
+
+.goal-content:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
+}
+
+.goal-card input[type="radio"]:checked + .goal-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+    transform: translateY(-4px);
+}
+
+.goal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.goal-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.goal-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Selected state - white text */
+.goal-card input[type="radio"]:checked + .goal-content .goal-title {
+    color: #ffffff !important;
+}
+
+.goal-card input[type="radio"]:checked + .goal-content .goal-desc {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+@media (max-width: 640px) {
+    .goal-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   GOAL PREVIEW
+   ============================================ */
+.goal-preview {
+    background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.preview-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4338ca;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.preview-item {
+    background: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.preview-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.preview-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.preview-note {
+    grid-column: 1 / -1;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #92400e;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    margin-top: 1.5rem;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+.error-message,
+#registerError,
+#completeProfileError {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   PROGRESS STEPS (Top Navigation)
+   ============================================ */
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-width: 70px;
+}
+
+.step:hover {
+    background: #f1f5f9;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.step-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Active step */
+.step.active .step-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.step.active .step-label {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Completed step */
+.step.completed .step-number {
+    background: #10b981;
+    color: white;
+}
+
+.step.completed .step-number::after {
+    content: '✓';
+    font-size: 0.75rem;
+}
+
+.step.completed .step-label {
+    color: #10b981;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+    
+    .form-section::before {
+        left: 16px;
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    .progress-steps {
+        gap: 0.25rem;
+        padding: 0.75rem 0;
+    }
+    
+    .step {
+        min-width: 60px;
+        padding: 0.375rem 0.5rem;
+    }
+    
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    
+    .step-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-section {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.form-section:nth-child(2) { animation-delay: 0.1s; }
+.form-section:nth-child(3) { animation-delay: 0.2s; }
+.form-section:nth-child(4) { animation-delay: 0.3s; }
+
+/* ============================================
+   SUCCESS/ERROR STATES FOR INPUTS
+   ============================================ */
+.form-group input.valid,
+.form-group select.valid {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+.form-group input.invalid,
+.form-group select.invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+/* Password checkmark */
+.password-check {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #10b981;
+    font-size: 1.25rem;
+    font-weight: bold;
+}/* ============================================
+   WIDER FORM CARD - Override untuk form lebih lebar
+   Paste di paling bawah registration-styles.css
+   ============================================ */
+
+/* Main card container - WIDER */
+.card-auth,
+.register-form-wrapper,
+.auth-card {
+    max-width: 650px !important;  /* Dari ~450px jadi 650px */
+    width: 95% !important;
+    margin: 0 auto !important;
+}
+
+/* Form container scrollable area */
+.form-container {
+    max-height: 70vh !important;  /* Lebih tinggi dari 65vh */
+    width: 100% !important;
+}
+
+/* Form sections - full width */
+.form-section {
+    width: 100% !important;
+    padding: 1.75rem !important;  /* Padding lebih besar */
+}
+
+/* Input fields - full width with better spacing */
+.form-group input,
+.form-group select {
+    width: 100% !important;
+    padding: 0.875rem 1.125rem !important;  /* Padding lebih besar */
+    font-size: 1rem !important;
+}
+
+/* Form row - wider gaps */
+.form-row {
+    gap: 1.25rem !important;
+}
+
+/* Radio group - more space */
+.radio-group {
+    gap: 1rem !important;
+}
+
+/* Goal cards container - wider */
+.goal-options {
+    max-width: 600px !important;
+    gap: 1rem !important;
+}
+
+.goal-card {
+    max-width: 185px !important;
+}
+
+/* Progress steps - wider container */
+.progress-steps {
+    padding: 1.25rem 1.5rem !important;
+}
+
+/* Responsive - maintain width on tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card-auth,
+    .register-form-wrapper,
+    .auth-card {
+        max-width: 600px !important;
+    }
+}
+
+/* Mobile - full width */
+@media (max-width: 768px) {
+    .card-auth,
+    .register-form-wrapper,
+    .auth-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .form-section {
+        padding: 1.25rem !important;
+    }
+}
+/* ================================================
+   BIGGER PROGRESS STEPS - Paste ini di paling bawah
+   registration-styles.css
+   ================================================ */
+
+/* Progress steps container - bigger */
+.progress-steps {
+    gap: 1.25rem !important;
+    padding: 1.75rem 1rem !important;
+}
+
+/* Step item - bigger */
+.step {
+    gap: 0.625rem !important;
+    padding: 0.875rem 1.25rem !important;
+    min-width: 100px !important;
+    border-radius: 14px !important;
+}
+
+/* Step number - much bigger */
+.step-number {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.25rem !important;
+}
+
+/* Step label - bigger text */
+.step-label {
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+}
+
+/* Completed checkmark - bigger */
+.step.completed .step-number::after {
+    font-size: 1.125rem !important;
+}
+
+/* Active step label - bolder */
+.step.active .step-label {
+    font-weight: 700 !important;
+}
+
+/* Mobile - keep reasonable size */
+@media (max-width: 768px) {
+    .progress-steps {
+        gap: 0.75rem !important;
+        padding: 1.25rem 0.5rem !important;
+    }
+    
+    .step {
+        min-width: 75px !important;
+        padding: 0.625rem 0.875rem !important;
+    }
+    
+    .step-number {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1rem !important;
+    }
+    
+    .step-label {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ================================================
+   BIGGER PROGRESS STEPS - Paste ini di paling bawah
+   registration-styles.css
+   ================================================ */
+
+/* Progress steps container - bigger */
+.progress-steps {
+    gap: 1.25rem !important;
+    padding: 1.75rem 1rem !important;
+}
+
+/* Step item - bigger */
+.step {
+    gap: 0.625rem !important;
+    padding: 0.875rem 1.25rem !important;
+    min-width: 100px !important;
+    border-radius: 14px !important;
+}
+
+/* Step number - much bigger */
+.step-number {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.25rem !important;
+}
+
+/* Step label - bigger text */
+.step-label {
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+}
+
+/* Completed checkmark - bigger */
+.step.completed .step-number::after {
+    font-size: 1.125rem !important;
+}
+
+/* Active step label - bolder */
+.step.active .step-label {
+    font-weight: 700 !important;
+}
+
+/* Mobile - keep reasonable size */
+@media (max-width: 768px) {
+    .progress-steps {
+        gap: 0.75rem !important;
+        padding: 1.25rem 0.5rem !important;
+    }
+    
+    .step {
+        min-width: 75px !important;
+        padding: 0.625rem 0.875rem !important;
+    }
+    
+    .step-number {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1rem !important;
+    }
+    
+    .step-label {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ============================================
+   FIX: Form Container Overflow & Scrollbar
+   ============================================ */
+
+/* Main form container - prevent overflow */
+.form-container,
+.container {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 auto !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important; /* Prevent horizontal scroll */
+    overflow-y: auto !important;   /* Allow vertical scroll */
+}
+
+/* Fix scrollbar styling */
+.form-container::-webkit-scrollbar {
+    width: 8px !important; /* Wider scrollbar */
+}
+
+.form-container::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 4px !important;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+/* Fix form sections - prevent overflow */
+.form-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Fix form rows */
+.form-row {
+    display: flex !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.form-row > * {
+    flex: 1 !important;
+    min-width: 0 !important; /* Allow flex items to shrink */
+    box-sizing: border-box !important;
+}
+
+/* Fix form groups */
+.form-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Fix inputs */
+.form-group input,
+.form-group select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.75rem 1rem !important;
+}
+
+/* Fix card wrapper */
+.card-auth,
+.register-form-wrapper {
+    width: 100% !important;
+    max-width: 650px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* Prevent card overflow */
+}
+
+/* Fix complete profile page container */
+#completeProfilePage .container {
+    width: 100% !important;
+    max-width: 650px !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Reset any conflicting styles */
+* {
+    box-sizing: border-box !important;
+}
+
+/* ============================================
+   WIDER COMPLETE PROFILE PAGE
+   Melebarkan halaman complete profile
+   ============================================ */
+
+/* Main card container - MUCH WIDER */
+#completeProfilePage .card-auth,
+#completeProfilePage .register-form-wrapper,
+#completeProfilePage .auth-card,
+.complete-profile-card {
+    max-width: 900px !important;  /* Dari 650px → 900px (+38%) */
+    width: 95% !important;
+    margin: 0 auto !important;
+}
+
+/* Container inside */
+#completeProfilePage .container,
+.complete-profile-container {
+    max-width: 900px !important;
+    width: 100% !important;
+    padding: 2.5rem !important;  /* Lebih generous padding */
+    box-sizing: border-box !important;
+}
+
+/* Form sections - wider */
+#completeProfilePage .form-section {
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Progress steps - bigger untuk proporsi */
+#completeProfilePage .progress-steps {
+    gap: 2rem !important;
+    padding: 2rem 1.5rem !important;
+    max-width: 100% !important;
+}
+
+/* Step items - proportionally bigger */
+#completeProfilePage .step {
+    min-width: 120px !important;  /* Dari 100px */
+    padding: 1rem 1.5rem !important;
+}
+
+#completeProfilePage .step-number {
+    width: 56px !important;  /* Dari 50px */
+    height: 56px !important;
+    font-size: 1.375rem !important;
+}
+
+#completeProfilePage .step-label {
+    font-size: 1rem !important;
+}
+
+/* Goal cards - wider layout */
+#completeProfilePage .goal-options {
+    max-width: 100% !important;  /* Use full width */
+    gap: 1.25rem !important;
+    padding: 0 1.5rem !important;
+}
+
+#completeProfilePage .goal-card {
+    flex: 1 1 0 !important;
+    max-width: 280px !important;  /* Dari 200px → 280px */
+    min-width: 240px !important;
+}
+
+#completeProfilePage .goal-content {
+    padding: 1.75rem 1.25rem !important;
+    min-height: 180px !important;
+}
+
+#completeProfilePage .goal-icon {
+    font-size: 2.75rem !important;
+    height: 3.25rem !important;
+}
+
+#completeProfilePage .goal-title {
+    font-size: 1rem !important;
+    min-height: 2.5rem !important;
+    font-weight: 600 !important;
+}
+
+#completeProfilePage .goal-desc {
+    font-size: 0.875rem !important;
+    min-height: 2.5rem !important;
+}
+
+/* Form inputs - bigger */
+#completeProfilePage .form-group input,
+#completeProfilePage .form-group select {
+    padding: 1rem 1.25rem !important;
+    font-size: 0.9375rem !important;
+}
+
+/* Form rows - more spacing */
+#completeProfilePage .form-row {
+    gap: 1.5rem !important;
+}
+
+/* Welcome header - bigger */
+#completeProfilePage .welcome-header h2,
+#completeProfilePage h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+#completeProfilePage .welcome-header p {
+    font-size: 1rem !important;
+}
+
+/* Scrollable container height */
+#completeProfilePage .form-container {
+    max-height: 75vh !important;  /* Dari 70vh */
+}
+
+/* Button spacing */
+#completeProfilePage .btn-primary {
+    padding: 0.875rem 2rem !important;
+    font-size: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    #completeProfilePage .card-auth {
+        max-width: 850px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #completeProfilePage .card-auth {
+        max-width: 750px !important;
+    }
+    
+    #completeProfilePage .goal-card {
+        max-width: 240px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #completeProfilePage .card-auth {
+        max-width: 100% !important;
+        border-radius: 0 !important;
+    }
+    
+    #completeProfilePage .container {
+        padding: 1.5rem !important;
+    }
+    
+    #completeProfilePage .goal-options {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    #completeProfilePage .goal-card {
+        max-width: 100% !important;
+    }
+}
+
+/* Fix overflow issues */
+#completeProfilePage * {
+    box-sizing: border-box !important;
+}
+
+#completeProfilePage .form-container {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+/* Wider scrollbar for better UX */
+#completeProfilePage .form-container::-webkit-scrollbar {
+    width: 10px !important;
+}
+
+#completeProfilePage .form-container::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+    border-radius: 5px !important;
+}
+
+#completeProfilePage .form-container::-webkit-scrollbar-thumb {
+    background: #94a3b8 !important;
+    border-radius: 5px !important;
+}
+
+#completeProfilePage .form-container::-webkit-scrollbar-thumb:hover {
+    background: #64748b !important;
+}
+
+/* ============================================
+   GOAL CARDS - EXTRA COMPACT (Fit in Container)
+   Ukuran lebih kecil supaya pas masuk container
+   ============================================ */
+
+/* Goal container - smaller max width */
+#completeProfilePage .goal-options,
+.goal-options {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;  /* Dari 1rem → 0.75rem */
+    max-width: 580px !important;  /* Dari 600px → 580px */
+    margin: 0 auto !important;
+    padding: 0 0.75rem !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Goal cards - MUCH SMALLER */
+#completeProfilePage .goal-card,
+.goal-card {
+    flex: 1 1 0 !important;
+    max-width: 175px !important;  /* Dari 185px → 175px */
+    min-width: 160px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Goal content - MORE COMPACT */
+#completeProfilePage .goal-content,
+.goal-content {
+    padding: 1rem 0.625rem !important;  /* Extra compact padding */
+    min-height: 135px !important;  /* Dari 150px → 135px */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0.5rem !important;
+}
+
+/* Goal icon - SMALLER */
+#completeProfilePage .goal-icon,
+.goal-icon {
+    font-size: 2rem !important;  /* Dari 2.25rem → 2rem */
+    height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* Goal title - SMALLER FONT */
+#completeProfilePage .goal-title,
+.goal-title {
+    font-size: 0.875rem !important;  /* Dari 0.9375rem → 0.875rem */
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    min-height: 2rem !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+}
+
+/* Goal description - SMALLER FONT */
+#completeProfilePage .goal-desc,
+.goal-desc {
+    font-size: 0.75rem !important;  /* Dari 0.8125rem → 0.75rem (12px) */
+    color: #64748b !important;
+    min-height: 2rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+}
+
+/* Section title above goal cards */
+#completeProfilePage .goal-section h3,
+#completeProfilePage .form-section h3,
+.goal-section h3 {
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Hover - subtle lift */
+#completeProfilePage .goal-card:hover,
+.goal-card:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Selected state */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content,
+.goal-card input[type="radio"]:checked + .goal-content {
+    border-color: #8b5cf6 !important;
+}
+
+/* Tablet - slightly smaller */
+@media (min-width: 769px) and (max-width: 1023px) {
+    #completeProfilePage .goal-options,
+    .goal-options {
+        max-width: 520px !important;
+        gap: 0.625rem !important;
+    }
+    
+    #completeProfilePage .goal-card,
+    .goal-card {
+        max-width: 165px !important;
+        min-width: 150px !important;
+    }
+    
+    #completeProfilePage .goal-content,
+    .goal-content {
+        padding: 0.875rem 0.5rem !important;
+        min-height: 125px !important;
+    }
+}
+
+/* Mobile - stack vertically */
+@media (max-width: 768px) {
+    #completeProfilePage .goal-options,
+    .goal-options {
+        flex-direction: column !important;
+        max-width: 100% !important;
+    }
+    
+    #completeProfilePage .goal-card,
+    .goal-card {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* ============================================
+   GOAL CARDS - WHITE TEXT ONLY (Keep Icons Colored)
+   Hanya text yang putih, icon tetap warna asli
+   ============================================ */
+
+/* Selected card - WHITE TEXT for title */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content .goal-title,
+.goal-card input[type="radio"]:checked + .goal-content .goal-title {
+    color: #ffffff !important;  /* Pure white */
+}
+
+/* Selected card - WHITE TEXT for description */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content .goal-desc,
+.goal-card input[type="radio"]:checked + .goal-content .goal-desc {
+    color: #ffffff !important;  /* Pure white */
+    opacity: 0.95 !important;   /* Slightly transparent for readability */
+}
+
+/* IMPORTANT: Keep icon COLORED (remove any filter) */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content .goal-icon,
+.goal-card input[type="radio"]:checked + .goal-content .goal-icon {
+    filter: none !important;  /* No filter - keep original color */
+    opacity: 1 !important;
+    color: inherit !important;  /* Don't force white */
+}
+
+/* If icon is an emoji, keep it as is */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content .goal-icon img,
+.goal-card input[type="radio"]:checked + .goal-content .goal-icon img {
+    filter: none !important;
+}
+
+/* Ensure emoji stays colored */
+#completeProfilePage .goal-card input[type="radio"]:checked + .goal-content .goal-icon::before,
+.goal-card input[type="radio"]:checked + .goal-content .goal-icon::before {
+    filter: none !important;
+}
+
+/* ============================================
+   GENDER BUTTONS - WHITE TEXT (BOTH)
+   ============================================ */
+
+/* Selected gender button - white text for LAKI-LAKI */
+input[value="laki-laki"]:checked + label,
+#genderLaki:checked + label {
+    color: #ffffff !important;
+}
+
+/* Selected gender button - white text for PEREMPUAN */
+input[value="perempuan"]:checked + label,
+#genderPerempuan:checked + label {
+    color: #ffffff !important;
+}
+
+/* Universal selector - white text for ANY selected gender */
+input[name="jenisKelamin"]:checked + label {
+    color: #ffffff !important;
+}
+
+/* Keep emoji colored for BOTH */
+input[name="jenisKelamin"]:checked + label::before,
+input[name="jenisKelamin"]:checked + label span:first-child {
+    filter: none !important;
+    color: initial !important;
+}
+

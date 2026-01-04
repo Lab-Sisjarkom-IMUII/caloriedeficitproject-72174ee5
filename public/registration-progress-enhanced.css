@@ -1,0 +1,126 @@
+/* ============================================
+   ENHANCED REGISTRATION PROGRESS - CLEANED
+   Only progress-specific styles (no duplicates)
+   ============================================ */
+
+/* ============================================
+   STEP ANIMATIONS & STATES
+   ============================================ */
+
+/* Step hover effect */
+.step {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step:hover {
+    transform: translateY(-2px);
+}
+
+.step.active:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* Step number pulse animation for active */
+.step.active .step-number {
+    animation: stepPulse 2s ease-in-out infinite;
+}
+
+@keyframes stepPulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4); }
+    50% { box-shadow: 0 4px 16px rgba(102, 126, 234, 0.6); }
+}
+
+/* Completed step - no animation */
+.step.completed .step-number {
+    animation: none;
+}
+
+/* ============================================
+   INPUT FOCUS EFFECTS
+   ============================================ */
+.form-group input:focus,
+.form-group select:focus {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   RADIO BUTTONS HOVER
+   ============================================ */
+.radio-option:hover .radio-label {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+/* ============================================
+   GOAL CARDS HOVER
+   ============================================ */
+.goal-card:hover .goal-content {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+/* ============================================
+   FORM GROUP SUCCESS/ERROR ANIMATIONS
+   ============================================ */
+@keyframes successPulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+.form-group.success input,
+.form-group.success select {
+    animation: successPulse 0.5s ease;
+}
+
+.form-group.error input,
+.form-group.error select {
+    animation: shake 0.4s ease;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.step:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   GOAL SECTION SPECIFIC
+   ============================================ */
+.goal-section .section-title {
+    padding-left: 0;
+}
+
+.goal-section #targetWeightGroup {
+    margin-top: 1.5rem;
+    max-width: 300px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .step:hover {
+        transform: none;
+    }
+    
+    .goal-card:hover .goal-content {
+        transform: none;
+        box-shadow: none;
+    }
+}
+

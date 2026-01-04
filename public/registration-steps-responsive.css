@@ -1,0 +1,245 @@
+/* ============================================
+   REGISTRATION STEPS - FINAL MOBILE FIX
+   File: registration-steps-responsive.css
+   MUST LOAD AFTER login-daftar-sekarang.css
+   ============================================ */
+
+/* ============================================
+   OVERRIDE #registerForm SELECTORS
+   These match login-daftar-sekarang.css selectors
+   ============================================ */
+
+/* Override the exact selectors from login-daftar-sekarang.css */
+#registerForm #regProgressSteps.progress-steps,
+#registerForm .progress-steps,
+form#registerForm.register-form-wrapper .progress-steps,
+html body #registerForm .progress-steps {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    padding: 10px 4px !important;
+    margin-bottom: 12px !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #f8fafc !important;
+    border-radius: 10px !important;
+}
+
+/* Step items - MUST override min-width: 90px from login-daftar-sekarang.css */
+#registerForm #regProgressSteps .step,
+#registerForm .progress-steps .step,
+form#registerForm .progress-steps .step,
+html body #registerForm .progress-steps .step {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 4px 2px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 25% !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Step number */
+#registerForm .progress-steps .step .step-number,
+#registerForm .step-number,
+html body #registerForm .step-number {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    background: #e2e8f0 !important;
+    color: #64748b !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+}
+
+/* Step label */
+#registerForm .progress-steps .step .step-label,
+#registerForm .step-label,
+html body #registerForm .step-label {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+}
+
+/* Active state */
+#registerForm .step.active .step-number,
+html body #registerForm .step.active .step-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4) !important;
+}
+
+#registerForm .step.active .step-label,
+html body #registerForm .step.active .step-label {
+    color: #667eea !important;
+    font-weight: 600 !important;
+}
+
+/* Completed state */
+#registerForm .step.completed .step-number,
+html body #registerForm .step.completed .step-number {
+    background: #10b981 !important;
+    color: white !important;
+}
+
+#registerForm .step.completed .step-label,
+html body #registerForm .step.completed .step-label {
+    color: #10b981 !important;
+}
+
+/* ============================================
+   ALSO OVERRIDE GENERIC .progress-steps
+   For Complete Profile page and others
+   ============================================ */
+
+html body .progress-steps,
+html body #completeProfilePage .progress-steps {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    padding: 10px 4px !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    width: 100% !important;
+}
+
+html body .progress-steps .step,
+html body #completeProfilePage .progress-steps .step {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 25% !important;
+    padding: 4px 2px !important;
+}
+
+html body .progress-steps .step-number {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 14px !important;
+}
+
+html body .progress-steps .step-label {
+    font-size: 9px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+    #registerForm #regProgressSteps.progress-steps,
+    #registerForm .progress-steps,
+    html body #registerForm .progress-steps,
+    html body .progress-steps {
+        gap: 0 !important;
+        padding: 8px 2px !important;
+    }
+    
+    #registerForm .progress-steps .step,
+    html body #registerForm .progress-steps .step,
+    html body .progress-steps .step {
+        padding: 3px 1px !important;
+        min-width: 0 !important;
+        max-width: 25% !important;
+    }
+    
+    #registerForm .step-number,
+    html body #registerForm .step-number,
+    html body .progress-steps .step-number {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+        font-size: 12px !important;
+    }
+    
+    #registerForm .step-label,
+    html body #registerForm .step-label,
+    html body .progress-steps .step-label {
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #registerForm #regProgressSteps.progress-steps,
+    #registerForm .progress-steps,
+    html body #registerForm .progress-steps,
+    html body .progress-steps {
+        gap: 0 !important;
+        padding: 6px 0 !important;
+    }
+    
+    #registerForm .progress-steps .step,
+    html body .progress-steps .step {
+        padding: 2px 0 !important;
+    }
+    
+    #registerForm .step-number,
+    html body .progress-steps .step-number {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        min-height: 26px !important;
+        font-size: 11px !important;
+    }
+    
+    #registerForm .step-label,
+    html body .progress-steps .step-label {
+        font-size: 7px !important;
+        line-height: 1 !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #registerForm .step-number,
+    html body .progress-steps .step-number {
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px !important;
+        font-size: 10px !important;
+    }
+    
+    #registerForm .step-label,
+    html body .progress-steps .step-label {
+        font-size: 6px !important;
+    }
+}
+
+/* ============================================
+   DISABLE ANIMATIONS ON MOBILE
+   ============================================ */
+@media screen and (max-width: 768px) {
+    #registerForm .step:hover,
+    html body .progress-steps .step:hover {
+        transform: none !important;
+        background: transparent !important;
+    }
+    
+    #registerForm .step.active .step-number,
+    html body .progress-steps .step.active .step-number {
+        animation: none !important;
+    }
+}
